@@ -11,6 +11,7 @@ public class WyswietlMenu {
 		do {
 			System.out.println("1. Dodaj produkt do bazy");
 			System.out.println("2. Wyswietl produkty");
+			System.out.println("3. Zmien stan magazynowy produktu");
 			System.out.println("9. Wyjscie");			
 			BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 			pomocniczy = in.readLine();
@@ -22,6 +23,10 @@ public class WyswietlMenu {
 					break;
 				case 2:
 					WyswietlZBazy.main(conn);
+					WyswietlMenu.main(conn);
+					break;
+				case 3:
+					//KupLubSprzedaj.main(conn);
 					break;
 				case 9:
 					System.exit(0);
@@ -31,7 +36,7 @@ public class WyswietlMenu {
 					break;
 					}
 		}
-			while(wybor < 1 || wybor > 2);
+			while(wybor < 1 || wybor > 3);
 
 	}
 

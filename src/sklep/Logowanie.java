@@ -9,15 +9,15 @@ public class Logowanie {
 	public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException {
 		String login, haslo;
 		Connection conn;
-		System.out.println("Podaj login:");
+		PobierzKomunikat.main(1);
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		login = in.readLine();
-		System.out.println("Podaj haslo:");	
+		PobierzKomunikat.main(2);	
 		in = new BufferedReader(new InputStreamReader(System.in));
 		haslo = in.readLine();
 		conn = ZalogujDoBazy.main(login, haslo);
-		System.out.println("Logowanie pomyslne!");	
-		WyswietlMenu.main(conn);
+		PobierzKomunikat.main(3);
+		WyswietlMenu.main(conn); 
 		
 	}
 

@@ -8,7 +8,8 @@ import java.sql.Statement;
 
 public class DodajDoBazy {
 	public static void main(Connection c) throws IOException {
-		String id, nazwa;
+		String id, nazwa, pomocniczy;
+		double ilosc, cena;
 		/*
 		 * ID moglby byc przydzielane automatycznie, jednakze zakladam
 		 * ze produkty beda uporzadkowane zgodnie z jakas systematyka
@@ -18,20 +19,34 @@ public class DodajDoBazy {
 		System.out.println("podaj ID produktu");
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		id = in.readLine();
-		if (Oslona.main(id) == false) {
+		if (Oslona.tekstICyfry(id) == false) {
 			System.out.println("niewlasciwa wartosc");
 			WyswietlMenu.main(c);
 		}
 		System.out.println("podaj nazwe produktu");
-		in = new BufferedReader(new InputStreamReader(System.in));
 		nazwa = in.readLine();
-		if (Oslona.main(nazwa) == false) {
+		if (Oslona.tekstICyfry(nazwa) == false) {
 			System.out.println("niewlasciwa wartosc");
 			WyswietlMenu.main(c);
 		}
-		String sql = "INSERT INTO public.produkty (id , nazwa) "
-				+ "VALUES ("+id+", '"+nazwa+"')";
-		//String sql = "DELETE FROM public.produkty";
+		System.out.println("podaj ilosc produktu");
+		pomocniczy = in.readLine();
+		if (Oslona.iloscICena(pomocniczy) == false) {
+			System.out.println("niewlasciwa wartosc");
+			WyswietlMenu.main(c);
+		}
+		ilosc = Double.parseDouble(pomocniczy);
+		System.out.println("podaj cene produktu");
+		pomocniczy = in.readLine();
+		if (Oslona.iloscICena(pomocniczy) == false) {
+			System.out.println("niewlasciwa wartosc");
+			WyswietlMenu.main(c);
+		}
+		cena = Double.parseDouble(pomocniczy);;
+		String sql = "INSERT INTO public.produkty (id,nazwa,ilosc,cena) "
+				+ "VALUES ("+id+", '"+nazwa+"',"+ilosc+","+cena+")";
+		// System.out.println(sql);
+		//sql = "DELETE FROM public.produkty";
 		try {
 			Statement s = c.createStatement();
 			s.executeUpdate(sql);
