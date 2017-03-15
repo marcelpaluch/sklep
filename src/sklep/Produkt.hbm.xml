@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 19, 2016 3:46:54 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="sklep.Produkt" table="PRODUKT">
+        <id name="ID" type="int" access="field">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="nazwa" type="java.lang.String" access="field">
+            <column name="NAZWA" />
+        </property>
+        <property name="cena" type="double" access="field">
+            <column name="CENA" />
+        </property>
+        <property name="ilosc" type="double" access="field">
+            <column name="ILOSC" />
+        </property>
+    </class>
+</hibernate-mapping>
