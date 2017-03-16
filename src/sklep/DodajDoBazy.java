@@ -45,7 +45,6 @@ public class DodajDoBazy {
 		cena = Double.parseDouble(pomocniczy);;
 		String sql = "INSERT INTO public.produkty (id,nazwa,ilosc,cena) "
 				+ "VALUES ("+id+", '"+nazwa+"',"+ilosc+","+cena+")";
-		// System.out.println(sql);
 		//sql = "DELETE FROM public.produkty";
 		try {
 			Statement s = c.createStatement();

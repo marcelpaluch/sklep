@@ -12,10 +12,11 @@ public class WyswietlZBazy {
 		try {
 			Statement s = c.createStatement();
 			ResultSet rs = s.executeQuery(sql);
-			rs.next();
-			System.out.println(rs.getString("nazwa"));
+			do {
+				rs.next();
+				System.out.println(rs.getString("nazwa") + " " + rs.getString("ilosc"));
+			} while (rs.getString("id") != null);
 			} catch (Exception e ) {
-			System.err.println(e.getMessage());
 			WyswietlMenu.main(c);
 		}
 	

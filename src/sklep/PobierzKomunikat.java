@@ -1,3 +1,6 @@
+//komunikaty zaczynam indeksowac od 1, dlatego, ze wtedy parametr i wskazuje na linie
+// w pliku tekstowym w ktorej dany komunikat sie znajduje
+
 package sklep;
 
 import java.io.BufferedReader;
