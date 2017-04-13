@@ -1,4 +1,4 @@
-package sklep;
+package sklep.common;
 
 import java.io.IOException;
 import java.sql.*;
@@ -14,9 +14,7 @@ public class ZalogujDoBazy {
 		Connection c = null;
 		try {
 			 Class.forName("org.postgresql.Driver");
-	         c = DriverManager
-	            .getConnection("jdbc:postgresql://localhost:5432/sklep",
-	            login, haslo);
+	         c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/sklep", login, haslo);
 	      } catch (Exception e) {
 	    	  System.out.println("Niewlasciwy login lub haslo");
 	    	  Logowanie.main(null);

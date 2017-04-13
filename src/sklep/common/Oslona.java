@@ -1,4 +1,4 @@
-package sklep;
+package sklep.common;
 
 public class Oslona {
 

@@ -1,0 +1,9 @@
+Podaj login:
+Podaj haslo:
+Logowanie pomyslne!
+1. Dodaj produkt do bazy
+2. Wyswietl produkty
+3. Wyszukaj produkt
+9. Wyjscie
+Niepoprawny wybor, sproboj jeszcze raz
+Podaj ID produktu ktory chcesz wyszukac

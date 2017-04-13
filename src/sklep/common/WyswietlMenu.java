@@ -1,11 +1,12 @@
-package sklep;
+package sklep.common;
 
 import java.io.*;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public class WyswietlMenu {
 
-	public static void main(Connection conn) throws IOException {
+	public static void main(Connection conn) throws IOException, SQLException {
 		int wybor;
 		String pomocniczy;	
 		do {
@@ -24,7 +25,11 @@ public class WyswietlMenu {
 					WyswietlZBazy.main(conn);
 					WyswietlMenu.main(conn);
 				case 3:
-					//KupLubSprzedaj.main(conn);
+					WyszukajProdukt.main(conn);
+					WyswietlMenu.main(conn);
+				case 4:
+
+					WyswietlMenu.main(conn);
 				case 9:
 					System.exit(0);
 				default:

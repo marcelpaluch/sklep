@@ -1,13 +1,14 @@
-package sklep;
+package sklep.common;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DodajDoBazy {
-	public static void main(Connection c) throws IOException {
+	public static void main(Connection c) throws IOException, SQLException {
 		String id, nazwa, pomocniczy;
 		double ilosc, cena;
 		/*

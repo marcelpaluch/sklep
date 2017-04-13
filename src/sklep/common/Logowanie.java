@@ -1,4 +1,4 @@
-package sklep;
+package sklep.common;
 
 import java.io.*;
 import java.sql.Connection;
