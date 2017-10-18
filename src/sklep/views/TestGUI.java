@@ -22,8 +22,6 @@ import java.awt.event.ActionEvent;
 public class TestGUI extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JButton btnGuzik;
 
 	/**
 	 * Launch the application.
@@ -63,46 +61,19 @@ public class TestGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JLabel lblSyneczko = new JLabel("Syneczko");
-		
-		textField = new JTextField();
-		textField.setColumns(10);
-		
-		btnGuzik = new JButton("Guzik1");
-		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblSyneczko)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(textField, GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE))
-						.addComponent(btnGuzik, Alignment.TRAILING))
-					.addContainerGap())
+				.addGap(0, 432, Short.MAX_VALUE)
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblSyneczko)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(btnGuzik)
-					.addContainerGap(198, Short.MAX_VALUE))
+				.addGap(0, 263, Short.MAX_VALUE)
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
 
 	private void createEvents() {
-		
-		btnGuzik.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		
 	}
 }
