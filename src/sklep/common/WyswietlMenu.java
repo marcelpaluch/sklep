@@ -4,12 +4,19 @@ import java.io.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.swing.JFrame;
+
+import sklep.views.GlowneMenuGUI;
+import sklep.views.LogowanieGUI;
+
 public class WyswietlMenu {
 
 	public static void main(Connection conn) throws IOException, SQLException {
-		int wybor;
-		String pomocniczy;
-		do {
+		//int wybor;
+		//String pomocniczy;
+		GlowneMenuGUI frame = new GlowneMenuGUI();
+		frame.setVisible(true);
+		/*do {
 			PobierzKomunikat.main(4);
 			PobierzKomunikat.main(5);
 			PobierzKomunikat.main(6);
@@ -36,7 +43,7 @@ public class WyswietlMenu {
 					PobierzKomunikat.main(8);
 					}
 		}
-			while(wybor < 1 || wybor > 3);
+			while(wybor < 1 || wybor > 3);*/
 
 	}
 

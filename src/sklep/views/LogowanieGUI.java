@@ -27,7 +27,7 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class TestGUI extends JFrame {
+public class LogowanieGUI extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtLogin;
@@ -45,7 +45,7 @@ public class TestGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TestGUI frame = new TestGUI();
+					LogowanieGUI frame = new LogowanieGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -57,14 +57,14 @@ public class TestGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TestGUI() {
+	public LogowanieGUI() {
 		initComponents();
 		createEvents();
 	}
 
 	private void initComponents() {
 		setTitle("Sklep");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(TestGUI.class.getResource("/sklep/resources/icon.jpg")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(LogowanieGUI.class.getResource("/sklep/resources/icon.jpg")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -87,13 +87,7 @@ public class TestGUI extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				try {
 					Logowanie.main(txtLogin.getText(), txtHaslo.getText());
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (SQLException e) {
+				} catch (ClassNotFoundException | IOException | SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
