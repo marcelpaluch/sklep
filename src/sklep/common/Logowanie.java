@@ -4,21 +4,22 @@ import java.io.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 public class Logowanie {
 	
-	public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException {
-		String login, haslo;
+	public static void main(String login, String haslo) throws IOException, SQLException, ClassNotFoundException {
 		Connection conn;
-		PobierzKomunikat.main(1);
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		login = in.readLine();
-		PobierzKomunikat.main(2);	
-		in = new BufferedReader(new InputStreamReader(System.in));
-		haslo = in.readLine();
 		conn = ZalogujDoBazy.main(login, haslo);
-		PobierzKomunikat.main(3);
-		WyswietlMenu.main(conn); 
-		
+		if (conn == null)
+		{
+			JOptionPane.showMessageDialog(null, "Niewlasciwy login lub haslo!");
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(null, "Logowanie pomyslne!");
+			WyswietlMenu.main(conn); 
+		}
 	}
 
 }

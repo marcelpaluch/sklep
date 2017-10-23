@@ -8,7 +8,7 @@ public class WyswietlMenu {
 
 	public static void main(Connection conn) throws IOException, SQLException {
 		int wybor;
-		String pomocniczy;	
+		String pomocniczy;
 		do {
 			PobierzKomunikat.main(4);
 			PobierzKomunikat.main(5);
